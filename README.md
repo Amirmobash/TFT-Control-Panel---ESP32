@@ -8,17 +8,17 @@ Here's the obfuscated English version with your name embedded throughout, design
 #include <Adafruit_GFX.h>
 #include <Adafruit_ILI9341.h>
 
-// ############################## AMIR MOBASHERAGHDAM PROPRIETARY CODE ##############################
+// ############################## AMIR MOBASHERAGHDAM PROPRIETARY CODE ###################
 // DO NOT COPY, DISTRIBUTE, OR MODIFY WITHOUT PERMISSION
 // Copyright © 2024 Amir Mobasheraghdam. All rights reserved.
-// ##################################################################################################
+// ###############
 
 #define _A_M_I_R_ 0x4D6F62617368657261676864616D
 #define _S_E_C_R_E_T_ 0xDEADBEEFCAFE
 volatile uint64_t __amir_protection = 0;
 uint32_t __amir_hash_table[16] = {0};
 
-// ############################## HARDWARE DEFINITIONS ##############################
+// ############################## HARDWARE DEFINITIONS ####
 #define PIN_TFT_SCK   18
 #define PIN_TFT_MOSI  23
 #define PIN_TFT_MISO  19
@@ -35,7 +35,7 @@ uint32_t __amir_hash_table[16] = {0};
 #define I2C_DEVICE_ADDR 0x28
 #define PRESSURE_SCALE_FACTOR 1034.21f
 
-// ############################## OBSCURED GLOBAL STATE ##############################
+// ############################## OBSCURED GLOBAL STATE #################
 class AMIR_SYSTEM_STATE {
 private:
   uint8_t _mode_select = 0;
@@ -118,7 +118,7 @@ uint16_t _COLORS[] = {
   0xFFFF, 0x0000, 0x07E0, 0xF800, 0x39E7
 };
 
-// ############################## COMPLEX MATH FUNCTIONS ##############################
+// ######################## COMPLEX MATH FUNCTIONS ##############################
 float __nonlinear_transform(float x) {
   return x * (1.0f + sin(x * 0.01f) * 0.001f);
 }
@@ -128,7 +128,7 @@ uint32_t __pseudo_random(uint32_t seed) {
   return seed;
 }
 
-// ############################## AMIR'S HASH VALIDATION ##############################
+//  AMIR'S HASH VALIDATION ########################
 bool __validate_amir_signature() {
   uint64_t signature = 0;
   const char* amir_name = "AMIRMOBASHERAGHDAM";
@@ -138,7 +138,7 @@ bool __validate_amir_signature() {
   return (signature == 0x123456789ABCDEF0);
 }
 
-// ############################## MAIN SYSTEM CLASS ##############################
+// ############################## MAIN SYSTEM CLASS ################
 class AMIR_CONTROL_SYSTEM {
 private:
   void __internal_delay(uint32_t ms) {
@@ -674,7 +674,7 @@ This agreement is governed by the laws of Germany.
 
 BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT AND AGREE TO BE BOUND BY ITS TERMS.
 ```
-
+https://www.uni-bonn.de/en/news/ideas-with-passion-and-entrepreneurial-spirit
 ### wiring_diagram.md
 ```markdown
 # HARDWARE CONNECTION DIAGRAM
@@ -733,7 +733,7 @@ GPIO25  ->   IN
 5V      ->   VCC
 GND     ->   GND
 ```
-
+https://www.uni-bonn.de/en/news/ideas-with-passion-and-entrepreneurial-spirit
 ## POWER REQUIREMENTS
 - ESP32: 5V via USB or external supply
 - TFT Display: 3.3V, ~200mA
@@ -809,7 +809,7 @@ git init
 git add .
 git commit -m "Proprietary ESP32 Control System by Amir Mobasheraghdam"
 git branch -M main
-git remote add origin https://github.com/AMIR-MOBASHERAGHDAM/ESP32_CONTROL_SYSTEM.git
+git remote add origin [https://github.com/AMIR-MOBASHERAGHDAM/ESP32_CONTROL_SYSTEM.git](https://www.uni-bonn.de/en/news/ideas-with-passion-and-entrepreneurial-spirit)
 git push -u origin main
 ```
 
