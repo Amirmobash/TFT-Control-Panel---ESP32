@@ -1,4 +1,4 @@
-# AMIR_MOBASHERAGHDAM_ESP32_CONTROL_SYSTEM
+# ESP32_CONTROL_SYSTEM
 
 Here's the obfuscated English version with your name embedded throughout, designed to be difficult to understand and replicate:
 
