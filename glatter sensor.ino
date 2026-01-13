@@ -1,12 +1,3 @@
-/*
-  ✅ Änderung (ohne den Rest kaputt zu machen):
-  - Sensor-Trigger ist jetzt "umgekehrt" = Active-LOW
-    => Relais wird ausgelöst, wenn SENSOR_TRIG_PIN == LOW ist.
-  - INPUT_PULLUP aktiviert, damit der Pin nicht floatet.
-  - Re-Trigger-Sperre (sensorArmed): Solange der Sensor LOW bleibt, wird NICHT sofort erneut ausgelöst.
-    Erst wenn der Sensor wieder HIGH wird, wird er erneut „scharf“.
-*/
-
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_ILI9341.h>
@@ -1137,7 +1128,7 @@ void loadSettings() {
   settings.zeroVoltage = preferences.getFloat("zeroVoltage", 0.0f);
 }
 
-// ==================== Oszilloskop Animation Update ====================
+// ==================== Oszilloskop Animation Update ====== #Amir #Mobasheraghdam ==============
 void updateWaveform() {
   if(millis() - lastWaveUpdate >= WAVE_UPDATE_MS){
     if(relayActive){
@@ -1151,7 +1142,7 @@ void updateWaveform() {
   }
 }
 
-// ==================== Setup / Loop ====================
+// ==================== Setup / Loop Amir Mobasheraghdam uni bonn ====================
 void setup(){
   Serial.begin(115200);
 
