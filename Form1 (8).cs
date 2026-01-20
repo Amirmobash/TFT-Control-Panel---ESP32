@@ -1,26 +1,4 @@
-﻿using System.Drawing.Imaging;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Threading;
-using System.Text.Json;
-using System.Drawing.Printing;
-using System.Text.RegularExpressions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Workshop
-{
-    public partial class Form1 : Form
-    {
-        // ---- Dynamic Items (12 items instead of fixed 4) ----
-        private const int ItemCount = 12;
-        private const int ShiftCount = 5;
-
-        // ---- Orange/White Theme ----
-        private static readonly Color ThemeOrange = Color.FromArgb(255, 140, 0);
-        private static readonly Color ThemeLightOrange = Color.FromArgb(255, 235, 210);
-        private static readonly Color ThemeText = Color.Black;
-        private static readonly Color ThemeMutedText = Color.FromArgb(60, 60, 60);
-
-
+﻿
         private sealed class ItemRow
         {
             public int Index { get; }
@@ -103,32 +81,7 @@ namespace Workshop
             UpdateSTH();
         }
         //send data
-        public void LiveScreenshot(object sender, EventArgs e)
-        {
-            // pooshe LiveScreenshot
-            string liveScreenshotFolderPath = Path.Combine(CoreFolder, "LiveScreenshot");
-
-            // pooshe hast ya na
-            if (!Directory.Exists(liveScreenshotFolderPath))
-            {
-                // make
-                Directory.CreateDirectory(liveScreenshotFolderPath);
-
-                // hiden
-                File.SetAttributes(liveScreenshotFolderPath, FileAttributes.Hidden);
-
-            }
-            try
-            {
-                this.WindowState = FormWindowState.Maximized;
-                this.Invoke(new Action(() =>
-                {
-                    // Take a screenshot
-                    using (Bitmap bitmap = new Bitmap(this.Width, this.Height))
-                    {
-                        this.DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
-                        string fileName = Path.Combine(liveScreenshotFolderPath, $"{Environment.MachineName}.png");
-
+        
                         // Save the file as PNG
                         bitmap.Save(fileName, ImageFormat.Png);
                     }
@@ -157,28 +110,7 @@ namespace Workshop
             var res = LiveDataManagerClass.SaveChartData(chart5, fileName, NameComboBox.Text, totalNumber.Text, totalBox.Text, totalHours.Text, STHLabel.Text);
             if (res != "true")
             {
-                MessageBox.Show($"Error in Live_Daata\n{res}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            ///////////// dgv:
-            string associatedName = NameComboBox.Text;
-            string DGVDataFolderPath = Path.Combine(CoreFolder, "DGVData"); //  dgvData
-            // pooshe
-            if (!Directory.Exists(DGVDataFolderPath))
-            {
-                // make
-                Directory.CreateDirectory(DGVDataFolderPath);
-                // makhfi
-                File.SetAttributes(DGVDataFolderPath, FileAttributes.Hidden);
-            }
-            string fullSavePath = Path.Combine(DGVDataFolderPath, associatedName + ".json");
-            if (dataGridView1.RowCount > 0)
-            {
-                DGVDataManagerClass.SaveDataGridViewRows(dataGridView1, fullSavePath);
-            }
-
-        }
-        private void UpdateBarColors()
-        {
+                MessageBox.Show($"Error in Live_Daata\n{res}", "Error", MessageBoxButtons.OK, 
             UpdateTotal();
             foreach (Chart chart in charts)
             {
